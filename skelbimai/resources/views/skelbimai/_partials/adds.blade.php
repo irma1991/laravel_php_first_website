@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col-12">
-                <h2 class="h5 mb-4 text-black">Featured Ads</h2>
+                <h2 class="h5 mb-4 text-black">Populiariausi skelbimai</h2>
             </div>
         </div>
         <div class="row">

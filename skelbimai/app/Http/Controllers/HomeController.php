@@ -9,16 +9,12 @@ class HomeController extends Controller
     public function index(){
         return view('skelbimai.pages.home');
     }
-    public function profile(){
-        $darbuotojai = [
-            'Jonas',
-            'Petras',
-            'Antanas',
-            'Albinas'
-        ];
-        return view('skelbimai.pages.profile', compact("darbuotojai"));
-    }
+
     public function home(){
-        return view('home');
+        return view('skelbimai.pages.home');
+    }
+
+    public function showAds(){
+        return view('skelbimai.pages.all_ads');
     }
 }

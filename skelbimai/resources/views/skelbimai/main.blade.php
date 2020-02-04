@@ -24,10 +24,10 @@
 @include('skelbimai/_partials/overlay')
 @include('skelbimai/_partials/adds')
 @include('skelbimai/_partials/categories')
-@include('skelbimai/_partials/trends')
-@include('skelbimai/_partials/testimonials')
-@include('skelbimai/_partials/blog')
-@include('skelbimai/_partials/newsletter')
+{{--@include('skelbimai/_partials/trends')--}}
+{{--@include('skelbimai/_partials/testimonials')--}}
+{{--@include('skelbimai/_partials/blog')--}}
+{{--@include('skelbimai/_partials/newsletter')--}}
 @yield('content')
 @include('skelbimai/_partials/footer')
 <script src="{!! asset('js/jquery-3.3.1.min.js') !!}" ></script>
