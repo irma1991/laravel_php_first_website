@@ -10,15 +10,15 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
                 <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                    <li class="active"><a href="index.html">Pagrindinis</a></li>
-                    <li><a href="listings.html">Skelbimai</a></li>
+                    <li class="active"><a href="/">Pagrindinis</a></li>
+                    <li><a href="/ads">Skelbimai</a></li>
                     <li class="has-children">
-                        <a href="about.html">Apie</a>
+                        <a href="/about">Apie</a>
                         <ul class="dropdown">
-                            <li><a href="#">Projekto informacija</a></li>
+                            <li><a href="/about">Projekto informacija</a></li>
                         </ul>
                     </li>
-                    <li class="mr-5"><a href="contact.html">Kontaktai</a></li>
+                    <li class="mr-5"><a href="/contact">Kontaktai</a></li>
 
                     <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Prisijungti</a></li>
 

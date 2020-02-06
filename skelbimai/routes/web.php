@@ -12,4 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/profile/', 'HomeController@showProfile');
+Route::get('/ads/', 'HomeController@ads');
+Route::get('/ad/', 'HomeController@showAd');
+Route::get('/about/', 'HomeController@about');
+Route::get('/contact/', 'HomeController@contact');
