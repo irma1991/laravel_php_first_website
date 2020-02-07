@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Ad;
 use App\Category;
+use App\Ad;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,9 +13,10 @@ class HomeController extends Controller
     }
 
     public function ads(){
-        $ads = Ad::all();
-        $categories = Category::all();
-        return view('skelbimai.pages.ads', compact('ads'), compact('categories'));
+        $ads = Ad::select('id', 'title', 'description', 'img', 'price', 'email',
+                            'phone', 'location')->join('categories', 'categories.id',
+                            '=', 'ads.catId')->get();
+        return view('skelbimai.pages.ads', compact('ads'));
     }
 
     public function showAd(){
