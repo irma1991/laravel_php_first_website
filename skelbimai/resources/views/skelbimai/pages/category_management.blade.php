@@ -24,7 +24,7 @@
             @if ($errors->any())
                 <div class = "alert alert-danger">
                     <ul>
-                        @foreach($errors ->all() as $error)
+                        @foreach($errors_>all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
@@ -32,18 +32,31 @@
             @endif
             <div class="row">
                 <div class="col-md mb-5"  data-aos="fade">
-                    <form method = "POST" action="/store_category" class="p-5 bg-white">
-                        @csrf
+                    <form class="p-5 bg-white">
                         <div class="row form-group">
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <a href = "/category_form"><button type="button" class="btn btn-primary">Prideti kategorija</button></a>
+                                </div>
+                            </div>
 
                             <div class="col-md-12">
-                                <label class="text-black" for="email">Kategorijos pavadinimas</label>
-                                <input type="text" id="title" name="title" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <input type="submit" name="submit" value="Patvirtinti" class="btn btn-primary py-2 px-4 text-white">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Kategorija</th>
+                                        <th scope="col">Redaguoti</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($categories as $category)
+                                    <tr>
+                                        <th>{{ $category->name }}</th>
+                                        <td><a class = "btn btn-danger" href = "/category_delete/ {{ $category->id }}">Salinti</a></td>
+                                    </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </form>

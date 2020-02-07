@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Ad;
+use App\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +13,9 @@ class HomeController extends Controller
     }
 
     public function ads(){
-        return view('skelbimai.pages.ads');
+        $ads = Ad::all();
+        $categories = Category::all();
+        return view('skelbimai.pages.ads', compact('ads'), compact('categories'));
     }
 
     public function showAd(){

@@ -17,5 +17,9 @@ Route::get('/ad/', 'HomeController@showAd');
 Route::get('/about/', 'HomeController@about');
 Route::get('/contact/', 'HomeController@contact');
 Route::get('/ad_form/', 'AdController@adForm');
+Route::get('/ad_management/', 'AdController@adManagement');
+Route::post('/ad_add/', 'AdController@adAdd');
 Route::get('/category_form/', 'CategoryController@categoryForm'); // parodo forma
 Route::post('/store_category/', 'CategoryController@storeCategory'); // siuncia duomenis i db
+Route::get('/category_management/', 'CategoryController@categoryManagement');
+Route::get('/category_delete/{category}', 'CategoryController@categoryDelete');
