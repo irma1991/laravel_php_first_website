@@ -44,32 +44,29 @@
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th scope="col">Skelbimo informacija</th>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Pavadinimas</th>
+                                        <th scope="col">Aprasymas</th>
+                                        <th scope="col">Kaina</th>
+                                        <th scope="col">El. pastas</th>
+                                        <th scope="col">Telefonas</th>
+                                        <th scope="col">Vietove</th>
                                         <th scope="col">Redaguoti</th>
+                                        <th scope="col">Trinti</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <tr>
                                     @foreach($ads as $ad)
-                                        <tr>
-                                            <th>{{ $ad->catId }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>{{ $ad->name }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>{{ $ad->description }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>{{ $ad->price }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>{{ $ad->email }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>{{ $ad->phone }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>{{ $ad->location }}</th>
+                                            <td>{{ $ad->catId }}</td>
+                                            <td>{{ $ad->name }}</td>
+                                            <td>{{ $ad->description }}</td>
+                                            <td>{{ $ad->price }}</td>
+                                            <td>{{ $ad->email }}</td>
+                                            <td>{{ $ad->phone }}</td>
+                                            <td>{{ $ad->location }}</td>
+                                            <td><a class = "btn btn-danger" href = "/ad_update/{{$ad->id}}">Redaguoti</a></td>
+                                            <td><a class = "btn btn-danger" href = "/ad_delete/{{$ad->id}}">Trinti</a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

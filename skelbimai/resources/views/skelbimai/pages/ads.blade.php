@@ -31,9 +31,9 @@
                             <div class="d-block d-md-flex listing vertical">
                                 <a href="#" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
                                 <div class="lh-content">
-                                    <span class="category">{{ $ad->catId }}</span>
+                                    <span class="category">{{ $ad->category }}</span>
                                     <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                                    <h3>Pavadinimas: {{ $ad->name }}</h3>
+                                    <a href  = "/ad/{{ $ad->id }}"><h3>Pavadinimas: {{ $ad->name }}</h3></a>
                                     <p>Aprasymas: {{ $ad->description }}</p>
                                     <p>Kaina: {{ $ad->price }}</p>
                                     <p>El. pastas: {{ $ad->email }}</p>
@@ -52,17 +52,7 @@
                         </div>
                         @endforeach
                     </div>
-
-                    <div class="col-12 mt-5 text-center">
-                        <div class="custom-pagination">
-                            <span>1</span>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <span class="more-page">...</span>
-                            <a href="#">10</a>
-                        </div>
-                    </div>
-
+                    {{$ads->links()}}
                 </div>
                 <div class="col-lg-3 ml-auto">
 

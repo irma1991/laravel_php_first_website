@@ -12,16 +12,16 @@ class CategoryController extends Controller
     }
 
     public function storeCategory(Request $request){
-        $validateData = $request->validate([
-            'title' => 'required'
-        ]);
+    $validateData = $request->validate([
+        'title' => 'required'
+    ]);
 //        $cat = request('title');
 //        dd($cat);
-        $category = Category::create([
-            'name' => request('title')
-        ]);
-        return redirect('/category_management');
-    }
+    $category = Category::create([
+        'name' => request('title')
+    ]);
+    return redirect('/category_management');
+}
 
     public function categoryManagement(){
         $categories = Category::all();

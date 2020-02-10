@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/ads/', 'HomeController@ads');
-Route::get('/ad/', 'HomeController@showAd');
+Route::get('/ad/{ad}', 'HomeController@showAd');
 Route::get('/about/', 'HomeController@about');
 Route::get('/contact/', 'HomeController@contact');
 Route::get('/ad_form/', 'AdController@adForm');
@@ -23,3 +23,6 @@ Route::get('/category_form/', 'CategoryController@categoryForm'); // parodo form
 Route::post('/store_category/', 'CategoryController@storeCategory'); // siuncia duomenis i db
 Route::get('/category_management/', 'CategoryController@categoryManagement');
 Route::get('/category_delete/{category}', 'CategoryController@categoryDelete');
+Route::get('/ad_delete/{ad}', 'AdController@adDelete');
+Route::get('/ad_update/{ad}', 'AdController@updateAd');
+Route::post('/ad_update2/', 'AdController@updateAd2');
