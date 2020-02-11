@@ -9,35 +9,33 @@
 
                     <div class="row justify-content-center mb-4">
                         <div class="col-md-8 text-center">
-                            <h1 class="" data-aos="fade-up">Nemokami skelbimai visiems</h1>
+                            <h1 class="" data-aos="fade-up">Nemokami skelbimai</h1>
                             <p data-aos="fade-up" data-aos-delay="100">Greitai aplenksime visus</p>
                         </div>
                     </div>
 
                     <div class="form-search-wrap mb-3" data-aos="fade-up" data-aos-delay="200">
-                        <form method="post">
+                        <form method="get" action="/search_action">
+                            @csrf
                             <div class="row align-items-center">
                                 <div class="col-lg-12 mb-4 mb-xl-0 col-xl-4">
-                                    <input type="text" class="form-control rounded" placeholder="Ko ieskai?">
+                                    <input type="text" class="form-control rounded" name ="search" placeholder="Ko ieskai?">
                                 </div>
                                 <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                                     <div class="wrap-icon">
                                         <span class="icon icon-room"></span>
-                                        <input type="text" class="form-control rounded" placeholder="Vieta">
+                                        <input type="text" class="form-control rounded" name = "location" placeholder="Vieta">
                                     </div>
 
                                 </div>
                                 <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                                     <div class="select-wrap">
                                         <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                                        <select class="form-control rounded" name="" id="">
+                                        <select class="form-control rounded" name="categoryId" id="categoryId">
                                             <option value="">Visos kategorijos</option>
-                                            <option value="">Buitine technika</option>
-                                            <option value="">Automobiliai</option>
-                                            <option value="">Elektronikos prekes</option>
-                                            <option value="">Grozis ir sveikata</option>
-                                            <option value="">Flora ir fauna</option>
-                                            <option value="">Kita</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

@@ -23,16 +23,20 @@ class AdController extends Controller
             'category' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:1000',
             'price' => 'required',
             'email' => 'required',
             'location' => 'required'
         ]);
 
+        $path = $request->file('image')->store('public/images');
+        $fileName = str_replace('public/', "", $path);
+
         $ad = Ad::create([
             'catId' => request('category'),
             'name' => request('title'),
             'description' => request('description'),
-            'img' => request('image'),
+            'img' => $fileName,
             'price' => request('price'),
             'email' => request('email'),
             'phone' => request('phone'),

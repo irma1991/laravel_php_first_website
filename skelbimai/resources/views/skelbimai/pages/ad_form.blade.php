@@ -34,7 +34,7 @@
             @endif
             <div class="row">
                 <div class="col-md mb-5"  data-aos="fade">
-                    <form method = "POST" action="/ad_add" class="p-5 bg-white">
+                    <form method = "POST" action="/ad_add" enctype="multipart/form-data" class="p-5 bg-white">
                         @csrf
                         <div class="row form-group">
                             <div class="col-md-12">

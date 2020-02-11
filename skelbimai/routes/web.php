@@ -26,3 +26,4 @@ Route::get('/category_delete/{category}', 'CategoryController@categoryDelete');
 Route::get('/ad_delete/{ad}', 'AdController@adDelete');
 Route::get('/ad_update/{ad}', 'AdController@updateAd');
 Route::post('/ad_update2/', 'AdController@updateAd2');
+Route::get('/search_action/', 'HomeController@searchAction');
