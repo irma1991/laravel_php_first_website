@@ -1,6 +1,8 @@
 @extends('skelbimai/main')
 @section('content')
-<div class="container">
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-position: center; background-size: cover; background-image: url(images/cat1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    </div>
+    <div style = "padding:30px;" class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
