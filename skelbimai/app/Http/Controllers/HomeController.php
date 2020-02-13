@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        $ads = Ad::select('ads.id', 'ads.name', 'ads.description','ads.price','ads.email',
+        $ads = Ad::select('ads.id', 'ads.name', 'ads.description','ads.img', 'ads.price','ads.email',
             'ads.phone', 'ads.location',
             'categories.name as category')->join('categories', 'categories.id', "=",'ads.catId')
             ->get();
@@ -18,7 +18,7 @@ class HomeController extends Controller
     }
 
     public function ads(){
-        $ads = Ad::select('ads.id', 'ads.name', 'ads.description','ads.price','ads.email',
+        $ads = Ad::select('ads.id', 'ads.name', 'ads.description', 'ads.img', 'ads.price','ads.email',
             'ads.phone', 'ads.location',
             'categories.name as category')->join('categories', 'categories.id', "=",'ads.catId')
             ->paginate(2);

@@ -9,7 +9,7 @@
 
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8 text-center">
-                            <h1>Ads Listings</h1>
+                            <h1>Skelbimu puslapis</h1>
                             <p class="mb-0">Choose product you want</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         @foreach($ads as $ad)
                         <div class="col-lg-6">
                             <div class="d-block d-md-flex listing vertical">
-                                <a href="#" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
+                                <a href="/ad/{{$ad->id}}" class="img d-block" style="background-image: url({{asset('storage/'.$ad->img)}})"></a>
                                 <div class="lh-content">
                                     <span class="category">{{ $ad->category }}</span>
                                     <a href="#" class="bookmark"><span class="icon-heart"></span></a>

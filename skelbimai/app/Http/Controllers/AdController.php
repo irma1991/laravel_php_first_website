@@ -23,7 +23,7 @@ class AdController extends Controller
             'category' => 'required',
             'title' => 'required',
             'description' => 'required',
-            'image' => 'mimes:jpeg,jpg,png,gif|required|max:1000',
+            'image' => 'mimes:jfif,jpeg,jpg,png,gif|required|max:1000',
             'price' => 'required',
             'email' => 'required',
             'location' => 'required'
