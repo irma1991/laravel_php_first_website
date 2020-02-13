@@ -19,10 +19,15 @@
                         </ul>
                     </li>
                     <li class="mr-5"><a href="/contact">Kontaktai</a></li>
+                    @auth
+                        <li><a href="/logout" class="cta"><span class="bg-primary text-white rounded">Atsijungti</span></a></li>
 
-                    <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Prisijungti</a></li>
+                    @endauth
+                @guest
+                        <li><a href="/login" class="cta"><span class="bg-primary text-white rounded">Prisijungti</span></a></li>
 
-                    <li><a href="register.html" class="cta"><span class="bg-primary text-white rounded">Registruotis</span></a></li>
+                        <li><a href="/register" class="cta"><span class="bg-primary text-white rounded">Registruotis</span></a></li>
+                        @endguest
                 </ul>
             </nav>
         </div>

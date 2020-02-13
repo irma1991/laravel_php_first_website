@@ -34,7 +34,7 @@
             @endif
             <div class="row">
                 <div class="col-md mb-5"  data-aos="fade">
-                    <form method = "POST" action="/ad_update2" class="p-5 bg-white">
+                    <form method = "POST" action="/ad_update2/{{$ad->id}}" enctype="multipart/form-data" class="p-5 bg-white">
                         @csrf
                         <input type="hidden" name="id" value="{{$ad->id}}">
                         <div class="row form-group">
@@ -63,6 +63,7 @@
                             <div class="col-md-12">
                                 <label class="text-black" for="email">Nuotraukos</label>
                                 <input type="file" id="image" name="image" class="form-control" value="{{ $ad->img }}">
+                                <img src="{{asset('storage/'.$ad->img)}}" alt="Image" class="img-fluid rounded">
                             </div>
                         </div>
 

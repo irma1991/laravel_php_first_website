@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Ad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
     public function index(){
         $categories = Category::all();
         $ads = Ad::select('ads.id', 'ads.name', 'ads.description','ads.img', 'ads.price','ads.email',
@@ -44,5 +46,10 @@ class HomeController extends Controller
             ->where('catId', 'LIKE', '%'.request('categoryId').'%')->get();
 
         return view('skelbimai.pages.search', compact('ads'));
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
     }
 }

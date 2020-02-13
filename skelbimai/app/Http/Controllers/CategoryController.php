@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth', [
+            'only' => [
+                'categoryDelete',
+                'categoryManagement',
+                'storeCategory',
+                'categoryForm'
+            ]
+        ]);
+    }
+
     public function categoryForm(){
         return view('skelbimai.pages.category_form');
     }
