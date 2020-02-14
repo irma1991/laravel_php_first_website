@@ -46,6 +46,7 @@
                                         <span class="icon-star text-warning"></span>
                                         <span class="icon-star text-secondary"></span>
                                         <span class="review">(3 Reviews)</span>
+
                                     </p>
                                 </div>
                             </div>

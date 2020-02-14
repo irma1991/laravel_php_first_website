@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ad extends Model
-{
+class Ad extends Model{
     protected $fillable = ['catId',
                             'name',
                             'description',
@@ -15,4 +14,12 @@ class Ad extends Model
                             'email',
                             'phone',
                             'location'];
+
+    public function comments(){
+        return $this->hasMany('Comment::class');
+    }
+
+    public function user(){
+        return $this->belongsTo('User::class');
+    }
 }

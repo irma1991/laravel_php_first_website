@@ -32,3 +32,4 @@ Auth::routes();
 
 Route::get('/ad_management', 'AdController@adManagement');
 Route::get('/logout', 'HomeController@logout');
+Route::post('/comment/{ad}', 'CommentController@addComment');

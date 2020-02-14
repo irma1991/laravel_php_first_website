@@ -30,7 +30,26 @@
                 <p>El. pastas: {{ $ad->email }}</p>
                 <p>Telefonas: {{ $ad->phone }}</p>
                 <p>Vietove: {{ $ad->location }}</p>
-
+                <form method="POST" action="/comment/{{$ad->id}}">
+                    @csrf
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="message">Komentaras</label>
+                        <textarea name="comment" cols="30" rows="7" class="form-control" placeholder="Parasykite savo komentara"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary bg-primary text-white rounded">Saugoti</button>
+                </form>
+                @if(count($ad->comment))
+                    <div class = "comment">
+                        <h4>Komentarai</h4>
+                        <ul class = "list-group">
+                            @foreach($ad->comment as $mainComment)
+                                <li class = "list-group-item">{{$mainComment->comment}}</li>
+                                @endforeach
+                        </ul>
+                    </div>
+                    @endif
             </div>
         </div>
     </div>
