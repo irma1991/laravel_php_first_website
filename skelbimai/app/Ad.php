@@ -10,6 +10,7 @@ class Ad extends Model
                             'name',
                             'description',
                             'img',
+                            'userId',
                             'price',
                             'email',
                             'phone',

@@ -23,6 +23,7 @@ class CreateAdsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('location');
             $table->integer('catId');
+            $table->integer('userId');
             $table->timestamps();
         });
     }

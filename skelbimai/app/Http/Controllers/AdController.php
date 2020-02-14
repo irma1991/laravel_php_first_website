@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Ad;
 use App\Category;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use File;
+use Illuminate\Support\Facades\Auth;
 
 class AdController extends Controller
 {
@@ -50,21 +52,31 @@ class AdController extends Controller
             'name' => request('title'),
             'description' => request('description'),
             'img' => $fileName,
+            'userId' => Auth::id(),
             'price' => request('price'),
             'email' => request('email'),
             'phone' => request('phone'),
             'location' => request('location')
         ]);
+
         return redirect('/ads');
     }
 
     public static function adDelete(Ad $ad){
-        $ad->delete();
-        return redirect('/ad_management');
+        if(Gate::allows('update-post', $ad)){
+            $ad->delete();
+            return redirect('/ad_management');
+        } return redirect('/error');
     }
 
     public function updateAd(Ad $ad){
-        return view('skelbimai.pages.ad_update', compact('ad'));
+        if(Gate::allows('update-post', $ad)){
+            return view('skelbimai.pages.ad_update', compact('ad'));
+        } return redirect('/error');
+    }
+
+    public function error(){
+        return view('skelbimai.pages.error');
     }
 
     public function updateAd2(Ad $ad, Request $request){
