@@ -73,11 +73,11 @@
                     <div class="owl-carousel nonloop-block-13">
                         @foreach($ads as $ad)
                         <div class="d-block d-md-flex listing vertical">
-                            <a href="listings-single.html" class="img d-block" style="background-image: url('images/img_4.jpg')"></a>
+                            <a href="/ad/{{$ad->id}}" class="img d-block" style="background-image: url({{asset('storage/'.$ad->img)}})"></a>
                             <div class="lh-content">
                                 <span class="category">{{ $ad->category }}</span>
                                 <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                                <h3><a href="listings-single.html">{{ $ad->name }}</a></h3>
+                                <h3><a href="/ad/{{$ad->id}}">{{ $ad->name }}</a></h3>
                                 <p>{{ $ad->description }}</p>
                                 <p>{{ $ad->price }}</p>
                                 <p>{{ $ad->email }}</p>

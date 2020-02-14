@@ -16,10 +16,10 @@ class Ad extends Model{
                             'location'];
 
     public function comments(){
-        return $this->hasMany('Comment::class');
+        return $this->hasMany(Comment::class);
     }
 
     public function user(){
-        return $this->belongsTo('User::class');
+        return $this->belongsTo(User::class);
     }
 }

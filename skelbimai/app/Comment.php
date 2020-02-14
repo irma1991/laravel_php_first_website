@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model{
     protected $fillable = ['id',
-                            'adId',
+                            'ad_id',
                             'userId',
                             'name',
                             'comment'];
 
     public function ad(){
-        return $this->belongsTo('Post::class');
+        return $this->belongsTo(Ad::class);
     }
 
     public function user(){
-        return $this->belongsTo('User::class');
+        return $this->belongsTo(User::class);
     }
 }

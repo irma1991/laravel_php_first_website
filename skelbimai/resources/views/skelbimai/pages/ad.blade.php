@@ -40,18 +40,20 @@
                 </div>
                 <button type="submit" class="btn btn-primary bg-primary text-white rounded">Saugoti</button>
                 </form>
-                @if(count($ad->comment))
-                    <div class = "comment">
-                        <h4>Komentarai</h4>
-                        <ul class = "list-group">
-                            @foreach($ad->comment as $mainComment)
-                                <li class = "list-group-item">{{$mainComment->comment}}</li>
-                                @endforeach
-                        </ul>
-                    </div>
-                    @endif
             </div>
         </div>
+        @if(count($ad->comments))
+            <div class = "comments my-3">
+                <h4>Komentarai</h4>
+                @foreach($ad->comments as $mainComment)
+                    <div class="alert alert-dark" role="alert">
+                        <p>{{$mainComment->name}}</li>
+                        <p>{{$mainComment->created_at}}</p>
+                        <p>{{$mainComment->comment}}</p>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 </div>
 @stop
